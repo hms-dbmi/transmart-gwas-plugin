@@ -31,20 +31,20 @@ grails.project.dependency.resolution = {
         // runtime 'mysql:mysql-connector-java:5.1.13'
     }
     plugins {
-		compile(':resources:1.2.1')
+		compile(':resources:1.2.14')
 		//// already included in biomart-domain
                 //compile(':transmart-java:1.2.4')
 		//// already included in search-domain
                 //compile(':biomart-domain:1.2.4')
 		//// already included in folder-management
                 //compile(':search-domain:1.2.4')
-		compile(':folder-management:1.2.4')
+		compile(':folder-management:1.2.4'){excludes 'transmart-legacy-db'}
 		//// already included in folder-management
                 //compile(':transmart-legacy-db:1.2.4')
 		compile(':spring-security-core:2.0-RC2')
-		compile(':quartz:1.0-RC2')
-        compile(':mail:1.0')
-		build(":release:2.2.1",
+		compile ':quartz:1.0.1'
+        compile(':mail:1.0.7')
+		build(":release:3.0.1",
 			":rest-client-builder:1.0.3"
 			) {
 		  export = false

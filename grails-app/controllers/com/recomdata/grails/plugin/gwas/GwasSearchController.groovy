@@ -7,7 +7,6 @@ import org.codehaus.groovy.grails.web.json.JSONObject
 import org.transmart.biomart.BioAssayAnalysis
 import org.transmart.biomart.Experiment
 import org.transmart.searchapp.*
-import org.codehaus.groovy.grails.plugins.PluginManagerHolder
 
 import java.lang.reflect.UndeclaredThrowableException
 import java.util.regex.Matcher
@@ -412,7 +411,7 @@ class GwasSearchController {
 			String tempImageFolder = explodedDeplDir + grailsApplication.config.com.recomdata.rwg.qqplots.temporaryImageFolder
 			
 			//get rdc-modules plugin info
-			def pluginManager = PluginManagerHolder.pluginManager
+			def pluginManager = grails.util.Holders.pluginManager
 			def plugin = pluginManager.getGrailsPlugin("rdc-rmodules")
 			String pluginDir = "rdc-rmodules-"+plugin.version;
 			pluginDir =  "${explodedDeplDir}/plugins/${pluginDir}/Rscripts/";
